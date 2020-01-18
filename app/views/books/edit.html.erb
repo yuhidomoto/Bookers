@@ -1,16 +1,22 @@
-<h1>Editing Book</h1>
+<div class="flash">
+<%= flash[:notice] %></div>
+
+<div class="editingbook">Editing Book</div>
 <%= form_for(@book) do |f| %>
 
-<h4>Title</h4>
+<div class="edit-box">
+<div class="edit-title">Title</div>
 <%= f.text_field :title %>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
+<div class="edit-body">Body</div>
+<%= f.text_area :body %><br>
 <%= f.submit 'Update Book' %>
 
+</div>
 <% end %>
 
-<%= link_to "Show",book_path(@book.id) %>
-<%= link_to "Back",books_path %>
-
+<div class="box1">
+<span class="under"><%= link_to "Show",book_path(@book.id) %></span>
+<span class="under"><%= link_to "Back",books_path %></span>
+</div>
 
